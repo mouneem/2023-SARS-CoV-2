@@ -9,7 +9,7 @@ library('ggplot2')
 library(dplyr)
 library(tidyverse)
 library(anytime)
-library(WDI)
+#library(WDI)
 theme_set(theme_bw())
 library(reshape2)
 ```
@@ -42,9 +42,9 @@ ggplot(gene_mut, aes(x = Gene, fill = Gene))+
 FQ <- as.data.frame(table(gene_mut$Gene))
 
 
-ggplot(gene_mut, aes(y = Gene, fill = Gene, x = 1))+
-  geom_bar()+ ggplot2::coord_polar()+
-  labs(x='Gene', y='Number of Amino Acid Mutations')
+#ggplot(gene_mut, aes(y = Gene, fill = Gene, x = 1))+
+#  geom_bar()+ ggplot2::coord_polar()+
+#  labs(x='Gene', y='Number of Amino Acid Mutations')
 
 gene_mut[gene_mut$Gene=='ORF1a', ]$Gene <- 'ORF1ab'
 gene_mut[gene_mut$Gene=='ORF1b', ]$Gene <- 'ORF1ab'
@@ -173,6 +173,7 @@ colnames(MM_rec) <- colnames(MM_clades)
 MMx <- rbind(MM_rec, MM_clades)
 
 MMx <- MMx[MMx$Nextstrain_clade!='recombinant',]
+MM_all <- MMx
 length(unique(MM_all$Mutation))
 MMs <- MMx[MMx$p > .95 , ]
 length(unique(MMs$Mutation))
@@ -212,35 +213,11 @@ dF <- dF[dF$from <= dF$to, ]
 
 dfg <- dF[dF$weight>.50,]
 
-write.csv(dfg, '~/Projects/SARS-CoV-2 2023/dfg.csv')
+write.csv(dfg, '../dfg.csv')
 
 
-colors <- read.csv('~/Projects/SARS-CoV-2 2023/color_s.csv')
-rownames(colors) <- colors$node
-g <- igraph::graph.data.frame(dfg, directed = FALSE )
-V(g)$color <- colors[V(g)$name,'color']
-
-plot(g, vertex.color = V(g)$color, layout = layout.kamada.kawai(g) )
-
-plot(x = g,
-    layout = igraph::layout.fruchterman.reingold(g),
-    edge.weight = V(g)$weight, 
-    vertex.size=5,
-    scale=c(2,2),
-    #mar=c(0,0,0,0)
-    vertex.color = V(g)$color, 
-    )
-
-
-
-plot(x = g,
-    layout = igraph::layout.kamada.kawai(g),
-    edge.weight = V(g)$weight, 
-    vertex.size=5,
-    scale=c(2,2),
-    #mar=c(0,0,0,0)
-    vertex.color = V(g)$color, 
-    )
+colors <- read.csv('../color_s.csv')
+ 
 
 ```
 # Divergence
