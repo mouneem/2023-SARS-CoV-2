@@ -27,3 +27,4 @@ The connection between the identified amino acid mutations and clades to their r
 
 ### Mutational escape
 The potential mutational escape of SARS-CoV-2 Omicron variant was estimated using a mutational antigenic profiling of SARS-CoV-2 RBD against a panel of antibodies targeting diverse RBD epitopes from https://jbloomlab.github.io/ dmsvariants/. Deep mutational scanning of RBD targeting antibodies was used to model polyclonal antibody binding to SARS-CoV-2 lineages [27]. All the analyses were performed using R and the code for generating the results can be provided in this github repository: https://github.com/mouneem/2023-SARS-CoV-2.
+   
