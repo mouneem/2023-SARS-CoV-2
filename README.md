@@ -18,7 +18,7 @@ Our analysis underscores the dynamic evolution of SARS-CoV-2, with variants rapi
 
 
 ## Methods
-### Data collection
+### Data collection 
 A total of 12,646 SARS-CoV-2 full-length genomes were collected from the GISAID EpiCovTM (update: 15 January 2023) belonging to six geographic areas and distributed over 214 countries [4]. The genomes were obtained from samples collected between December 26, 2019 and January 11, 2023. The sample selection was carefully randomized to ensure a homogeneous distribution of the selected samples across time and location (Supplementary Figure 1). To mitigate potential imbalance arising from variations in the number of samples from each region, all computed ratios were normalized by the number of samples collected from each region. The list of the sequences included in this analysis is provided in Supplementary Table 1.
 
 ### Phylogenetic data analysis
