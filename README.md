@@ -2,7 +2,6 @@
 A summary of 3 years spread of SARS-CoV-2: 
 
 ![GA](figures/graphical_abstract.svg)
-
 Introduction: 
 In nearly 3 years of circulation among the human population, SARS-CoV-2 underwent a complex evolution, shaping its genetics and adaptation to humans. Our study highlights varying prevalence, distribution across regions, and pandemic timeline.
 
